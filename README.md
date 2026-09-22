@@ -14,8 +14,7 @@ To run the application.  Clone the repository to your VM.and from the repository
 node server.js
 ```
 From the browser: HTTP://localhost:3000
-```
 
 #### User Management View
 
-![User Management](userManage,png)
+![User Management](userManage.png)
