@@ -8,11 +8,19 @@ const PORT = 3000;
 app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
 
+
 // ** Routes ***
 app.get("/", function (req, res) {
     userDB.getUsers(function (data) {
         console.log(data);
-        res.render("listUsers", { users: data });
+        res.render("manageUsers", { users: data });
+    });
+});
+
+app.post("/users", function (req, res) {
+    userDB.addUser(req.body, function (data) {
+        console.log(data);
+        res.redirect("/");
     });
 });
 
